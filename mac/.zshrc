@@ -121,3 +121,4 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # kimi-code
 export PATH="/Users/qiuqfang/.kimi-code/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
