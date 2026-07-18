@@ -49,11 +49,14 @@ link_file() {
 }
 
 echo "==> Linking configs..."
-link_file "$DOTFILES_DIR/.zshrc"               "$HOME/.zshrc"
-link_file "$DOTFILES_DIR/.zprofile"            "$HOME/.zprofile"
-link_file "$DOTFILES_DIR/.bashrc"              "$HOME/.bashrc"
-link_file "$DOTFILES_DIR/.bash_profile"        "$HOME/.bash_profile"
-link_file "$DOTFILES_DIR/.tmux.conf"           "$HOME/.tmux.conf"
+# macOS-specific
+link_file "$DOTFILES_DIR/mac/.zshrc"            "$HOME/.zshrc"
+link_file "$DOTFILES_DIR/mac/.zprofile"         "$HOME/.zprofile"
+link_file "$DOTFILES_DIR/mac/.tmux.conf"        "$HOME/.tmux.conf"
+
+# Shared with Windows (Git Bash reads these too)
+link_file "$DOTFILES_DIR/.bashrc"               "$HOME/.bashrc"
+link_file "$DOTFILES_DIR/.bash_profile"         "$HOME/.bash_profile"
 link_file "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
 
 cat <<'EOF'
