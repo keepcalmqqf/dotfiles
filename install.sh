@@ -22,13 +22,25 @@ else
 fi
 
 # CLI tools
-PKGS=(starship tmux fnm bun uv zsh-autosuggestions zsh-syntax-highlighting)
+PKGS=(starship tmux fnm bun uv zsh-autosuggestions zsh-syntax-highlighting
+      gh jq ripgrep cloudflared mole go maven cocoapods)
 for pkg in "${PKGS[@]}"; do
   if brew list --formula "$pkg" >/dev/null 2>&1; then
     echo "  [ok] $pkg"
   else
     echo "  [install] $pkg"
     brew install "$pkg"
+  fi
+done
+
+# Apps & fonts (casks; failure is non-fatal in case an app was installed manually)
+CASKS=(font-fira-code-nerd-font 1password-cli ngrok docker)
+for cask in "${CASKS[@]}"; do
+  if brew list --cask "$cask" >/dev/null 2>&1; then
+    echo "  [ok] $cask"
+  else
+    echo "  [install] $cask"
+    brew install --cask "$cask" || echo "  [warn] $cask install failed, skipping"
   fi
 done
 
@@ -71,7 +83,7 @@ cat <<'EOF'
 
 Done! 收尾两件事（无法脚本化）:
   1. 终端字体: 终端 App -> 设置 -> 描述文件 -> 文本 -> 字体, 选 "FiraCode Nerd Font"
-     (新电脑需先安装: brew install --cask font-fira-code-nerd-font)
+     (字体已由本脚本通过 cask 安装, 只需在设置里选中)
   2. 默认 shell 切到 zsh: chsh -s /bin/zsh
 然后新开一个终端标签页即可。
 EOF
