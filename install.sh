@@ -13,6 +13,14 @@ if ! command -v brew >/dev/null 2>&1; then
   exit 1
 fi
 
+# Git (usually provided by Xcode CLT; install via Homebrew if missing)
+if command -v git >/dev/null 2>&1; then
+  echo "  [ok] git"
+else
+  echo "  [install] git"
+  brew install git
+fi
+
 # CLI tools
 PKGS=(starship tmux fnm bun uv zsh-autosuggestions zsh-syntax-highlighting)
 for pkg in "${PKGS[@]}"; do
