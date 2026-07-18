@@ -8,10 +8,10 @@
 | --- | --- | --- |
 | `mac/.zshrc` | macOS | zsh 主配置：OMZ 插件（git/z/macos/colored-man-pages/extract）、starship、fnm、自动补全建议、语法高亮、别名 |
 | `mac/.zprofile` | macOS | Homebrew 环境、JetBrains Toolbox、OrbStack 集成 |
-| `.bashrc` / `.bash_profile` | 通用 | bash 配置，同样接入 starship、fnm（Windows 下给 Git Bash 用） |
+| `.bashrc` / `.bash_profile` | 通用 | bash 配置，同样接入 starship、fnm（Windows 下给 Git Bash 用），含历史前缀搜索（↑/↓）与历史去重 |
 | `mac/.tmux.conf` | macOS | tmux：真彩色、鼠标、Catppuccin Mocha 状态栏、`\|`/`-` 分屏 |
 | `.config/starship.toml` | 通用 | starship 提示符：双行布局、Nerd Font 图标、git 状态配色 |
-| `windows/Microsoft.PowerShell_profile.ps1` | Windows | PowerShell 5.1 配置：starship、fnm、移除与 fnm 冲突的 `ni` 别名 |
+| `windows/Microsoft.PowerShell_profile.ps1` | Windows | PowerShell 5.1 配置：starship、fnm、PSReadLine 历史前缀搜索/补全、移除与 fnm 冲突的 `ni` 别名 |
 | `windows/.minttyrc` | Windows | Git Bash 终端（mintty）：FiraCode Nerd Font、134x42 窗口 |
 | `install.sh` | macOS | 新电脑一键恢复脚本 |
 | `install.ps1` | Windows | 新电脑一键恢复脚本 |
@@ -39,13 +39,12 @@ cd D:\coding\dotfiles
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-脚本会自动：安装 starship / fnm / bun / uv（经 Scoop）、把共享配置（`.bashrc` / `.bash_profile` / `starship.toml`）和 `windows/` 下的配置链接到 `$HOME` 与 PowerShell `$PROFILE`（已有文件自动备份为 `*.bak.<时间戳>`）。
+脚本会自动：安装 git / starship / fnm / bun / uv 与 FiraCode Nerd Font Mono（经 Scoop）、把共享配置（`.bashrc` / `.bash_profile` / `starship.toml`）和 `windows/` 下的配置链接到 `$HOME` 与 PowerShell `$PROFILE`（已有文件自动备份为 `*.bak.<时间戳>`）。
 
 注意：
 
-1. Windows 上创建符号链接需要管理员权限或开启「开发者模式」，不满足时脚本自动改为复制文件——此后改动仓库配置需重跑一次 `install.ps1` 才会同步到 `$HOME`
-2. 手动安装字体 **FiraCode Nerd Font**（`scoop bucket add nerd-fonts; scoop install FiraCode-NF-Mono`），mintty 与 starship 的图标依赖它
-3. 未纳入版本管理的机器配置：`~/.gitconfig`（含公司内网 git 地址，按需手动维护）
+1. Windows 上创建符号链接需要管理员权限或开启「开发者模式」。不满足时脚本自动降级：shell 配置（`.bashrc` / `.bash_profile` / PowerShell profile）写成 stub 引导文件，直接 source 仓库里的文件——改仓库配置立即生效；`starship.toml` / `.minttyrc` 没有 include 机制只能复制，改动后需重跑一次 `install.ps1` 才会同步
+2. 未纳入版本管理的机器配置：`~/.gitconfig`（含公司内网 git 地址，按需手动维护）
 
 ## 日常使用
 

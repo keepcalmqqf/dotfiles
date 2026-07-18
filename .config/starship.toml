@@ -1,6 +1,7 @@
 # ===== Appearance =====
+# Windows 上 node/git 等子进程启动较慢，timeout 给宽一些避免丢模块信息
 add_newline = true
-command_timeout = 500
+command_timeout = 1000
 
 [character]
 success_symbol = "[❯](bold green)"
