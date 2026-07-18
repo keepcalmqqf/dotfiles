@@ -118,3 +118,6 @@ alias la='ls -A'
 
 # Syntax highlighting (must be sourced LAST in .zshrc)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# kimi-code
+export PATH="/Users/qiuqfang/.kimi-code/bin:$PATH"
