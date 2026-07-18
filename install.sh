@@ -14,7 +14,7 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 # CLI tools
-PKGS=(starship tmux zsh-autosuggestions zsh-syntax-highlighting)
+PKGS=(starship tmux fnm bun uv zsh-autosuggestions zsh-syntax-highlighting)
 for pkg in "${PKGS[@]}"; do
   if brew list --formula "$pkg" >/dev/null 2>&1; then
     echo "  [ok] $pkg"

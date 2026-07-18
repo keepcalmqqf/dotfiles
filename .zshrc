@@ -80,6 +80,9 @@ eval "$(starship init zsh)"
 # Fish-like autosuggestions (accept with → or End)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# fnm: Node.js version manager (auto-switch version on cd)
+eval "$(fnm env --use-on-cd)"
+
 # Common aliases
 alias ll='ls -lah'
 alias la='ls -A'

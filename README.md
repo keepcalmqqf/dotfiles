@@ -6,9 +6,9 @@
 
 | 文件 | 作用 |
 | --- | --- |
-| `.zshrc` | zsh 主配置：OMZ 插件（git/z/macos/colored-man-pages/extract）、starship、自动补全建议、语法高亮、别名 |
+| `.zshrc` | zsh 主配置：OMZ 插件（git/z/macos/colored-man-pages/extract）、starship、fnm、自动补全建议、语法高亮、别名 |
 | `.zprofile` | Homebrew 环境、JetBrains Toolbox、OrbStack 集成 |
-| `.bashrc` / `.bash_profile` | bash 配置，同样接入 starship |
+| `.bashrc` / `.bash_profile` | bash 配置，同样接入 starship、fnm |
 | `.tmux.conf` | tmux：真彩色、鼠标、Catppuccin Mocha 状态栏、`\|`/`-` 分屏 |
 | `.config/starship.toml` | starship 提示符：双行布局、Nerd Font 图标、git 状态配色 |
 | `install.sh` | 新电脑一键恢复脚本 |
@@ -21,7 +21,7 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-脚本会自动：安装 starship / tmux / zsh-autosuggestions / zsh-syntax-highlighting（经 Homebrew）、安装 Oh My Zsh（如缺失）、把上述配置软链接到 `$HOME`（已有文件自动备份为 `*.bak.<时间戳>`）。
+脚本会自动：安装 starship / tmux / fnm / bun / uv / zsh-autosuggestions / zsh-syntax-highlighting（经 Homebrew）、安装 Oh My Zsh（如缺失）、把上述配置软链接到 `$HOME`（已有文件自动备份为 `*.bak.<时间戳>`）。
 
 手动收尾（脚本里有提示）：
 
