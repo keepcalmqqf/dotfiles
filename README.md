@@ -9,7 +9,7 @@
 | `mac/.zshrc` | macOS | zsh 主配置：OMZ 插件（git/z/macos/colored-man-pages/extract）、starship、fnm、自动补全建议、语法高亮、别名 |
 | `mac/.zprofile` | macOS | Homebrew 环境、JetBrains Toolbox 集成 |
 | `.bashrc` / `.bash_profile` | 通用 | bash 配置，同样接入 starship、fnm（Windows 下给 Git Bash 用），含历史前缀搜索（↑/↓）与历史去重 |
-| `mac/.tmux.conf` | macOS | tmux：真彩色、鼠标、Catppuccin Mocha 状态栏、`\|`/`-` 分屏 |
+| `mac/.tmux.conf` | macOS | tmux：真彩色、鼠标、Catppuccin Mocha 状态栏（按下前缀键时高亮）、`\|`/`-` 分屏、hjkl 切换/调整窗格、vi 复制模式直出 pbcopy、Shift+←/→ 切窗口 |
 | `.config/starship.toml` | 通用 | starship 提示符：双行布局、Nerd Font 图标、git 状态配色 |
 | `windows/Microsoft.PowerShell_profile.ps1` | Windows | PowerShell 5.1 配置：starship、fnm、PSReadLine 历史前缀搜索/补全、移除与 fnm 冲突的 `ni` 别名 |
 | `windows/.minttyrc` | Windows | Git Bash 终端（mintty）：FiraCode Nerd Font、134x42 窗口 |
