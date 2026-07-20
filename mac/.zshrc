@@ -25,7 +25,7 @@ alias la='ls -A'
 # Extra PATH entries
 export PATH="$HOME/.kimi-code/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$PWD/.fvm/default/bin:$PATH"
+export PATH="$HOME/fvm/default/bin:$PATH"
 
 # Syntax highlighting (must be sourced LAST in .zshrc)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
