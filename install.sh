@@ -23,7 +23,7 @@ fi
 
 # CLI tools
 PKGS=(starship tmux fnm bun uv zsh-autosuggestions zsh-syntax-highlighting
-      gh jq ripgrep cloudflared mole go maven cocoapods)
+      gh jq ripgrep cloudflared mole go maven cocoapods fvm)
 for pkg in "${PKGS[@]}"; do
   if brew list --formula "$pkg" >/dev/null 2>&1; then
     echo "  [ok] $pkg"
