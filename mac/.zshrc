@@ -29,3 +29,10 @@ export PATH="$HOME/fvm/default/bin:$PATH"
 
 # Syntax highlighting (must be sourced LAST in .zshrc)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# >>> Hermes Studio CLI shim >>>
+case ":$PATH:" in
+  *":$HOME/bin:"*) ;;
+  *) export PATH="$HOME/bin:$PATH" ;;
+esac
+# <<< Hermes Studio CLI shim <<<
