@@ -37,6 +37,7 @@ case ":$PATH:" in
 esac
 # <<< Hermes Studio CLI shim <<<
 
+
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
