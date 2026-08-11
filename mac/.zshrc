@@ -32,7 +32,7 @@ export PATH="$HOME/fvm/default/bin:$PATH"
 _dotfiles_repo="${${${(%):-%x}:A}:h:h}"
 _dotfiles_auto_sync() {
   local stamp="$_dotfiles_repo/.last_sync" now=$EPOCHSECONDS
-  local last=$(<"$stamp" 2>/dev/null) || last=0
+  local last=$(cat "$stamp" 2>/dev/null) || last=0
   if (( now - ${last:-0} > 600 )); then
     echo $now >| "$stamp"
     ("$_dotfiles_repo/sync.sh" &>/dev/null &)
