@@ -48,7 +48,9 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 ## 日常使用
 
-配置文件通过软链接指向本仓库，直接编辑 `~/.zshrc` 等文件即修改仓库内容，改完提交即可：
+配置文件通过软链接指向本仓库，直接编辑 `~/.zshrc` 等文件即修改仓库内容。本机已开启**自动同步**：`.zshrc` 里的 `precmd` 钩子每 10 分钟检查一次，发现改动就自动 `git commit` + `push`（由 `sync.sh` 执行，新 shell 会话生效），无需手动提交。
+
+也可以随时手动运行 `./sync.sh` 或走传统流程：
 
 ```bash
 cd ~/dotfiles
@@ -56,3 +58,5 @@ git add -A
 git commit -m "update configs"
 git push
 ```
+
+> 说明：不用 launchd/cron 定时器是因为 macOS 隐私保护会阻止后台进程读写 `~/Desktop`；shell 钩子跑在终端里，天然有权限。若仓库移出 Desktop，也可改用 `sync.sh` + launchd。
