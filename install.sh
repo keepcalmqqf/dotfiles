@@ -21,28 +21,18 @@ else
   brew install git
 fi
 
-# CLI tools
-PKGS=(starship tmux fnm bun uv zsh-autosuggestions zsh-syntax-highlighting
-      gh jq ripgrep cloudflared mole go maven cocoapods fvm)
-for pkg in "${PKGS[@]}"; do
-  if brew list --formula "$pkg" >/dev/null 2>&1; then
-    echo "  [ok] $pkg"
-  else
-    echo "  [install] $pkg"
-    brew install "$pkg"
-  fi
-done
+# CLI tools, apps & global npm/uv packages (from Brewfile, kept in sync by sync.sh)
+echo "==> Installing packages from Brewfile..."
+brew bundle install --file="$DOTFILES_DIR/mac/Brewfile" || echo "  [warn] 部分包安装失败，可稍后重跑 brew bundle"
 
-# Apps & fonts (casks; failure is non-fatal in case an app was installed manually)
-CASKS=(font-fira-code-nerd-font 1password-cli ngrok docker)
-for cask in "${CASKS[@]}"; do
-  if brew list --cask "$cask" >/dev/null 2>&1; then
-    echo "  [ok] $cask"
-  else
-    echo "  [install] $cask"
-    brew install --cask "$cask" || echo "  [warn] $cask install failed, skipping"
-  fi
-done
+# Font is not tracked in the Brewfile (installed manually on this machine);
+# install it separately, non-fatal
+if brew list --cask font-fira-code-nerd-font >/dev/null 2>&1; then
+  echo "  [ok] font-fira-code-nerd-font"
+else
+  echo "  [install] font-fira-code-nerd-font"
+  brew install --cask font-fira-code-nerd-font || echo "  [warn] font install failed, skipping"
+fi
 
 # Oh My Zsh
 if [ -d "$HOME/.oh-my-zsh" ]; then

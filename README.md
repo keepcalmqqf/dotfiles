@@ -15,6 +15,7 @@
 | `windows/.minttyrc` | Windows | Git Bash 终端（mintty）：FiraCode Nerd Font、134x42 窗口 |
 | `install.sh` | macOS | 新电脑一键恢复脚本 |
 | `install.ps1` | Windows | 新电脑一键恢复脚本 |
+| `mac/Brewfile` | macOS | Homebrew 软件清单（formula / cask / npm / uv），`sync.sh` 每次运行时用 `brew bundle dump` 自动刷新 |
 
 ## 新电脑恢复（macOS）
 
@@ -24,7 +25,7 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-脚本会自动：安装 starship / tmux / fnm / bun / uv / zsh-autosuggestions / zsh-syntax-highlighting / gh / jq / ripgrep / cloudflared / mole / go / maven / cocoapods（经 Homebrew）、安装 FiraCode Nerd Font / 1password-cli / ngrok / Docker Desktop（经 Homebrew Cask）、安装 Oh My Zsh（如缺失）、把上述配置软链接到 `$HOME`（已有文件自动备份为 `*.bak.<时间戳>`）。
+脚本会自动：按 `mac/Brewfile` 经 `brew bundle` 安装全部 Homebrew 软件（formula / cask / npm / uv 全局包）、单独安装 FiraCode Nerd Font 字体、安装 Oh My Zsh（如缺失）、把上述配置软链接到 `$HOME`（已有文件自动备份为 `*.bak.<时间戳>`）。
 
 手动收尾（脚本里有提示）：
 
@@ -48,7 +49,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 ## 日常使用
 
-配置文件通过软链接指向本仓库，直接编辑 `~/.zshrc` 等文件即修改仓库内容。本机已开启**自动同步**：`.zshrc` 里的 `precmd` 钩子每 10 分钟检查一次，发现改动就自动 `git commit` + `push`（由 `sync.sh` 执行，新 shell 会话生效），无需手动提交。
+配置文件通过软链接指向本仓库，直接编辑 `~/.zshrc` 等文件即修改仓库内容。本机已开启**自动同步**：`.zshrc` 里的 `precmd` 钩子每 10 分钟检查一次，发现改动就自动 `git commit` + `push`（由 `sync.sh` 执行，新 shell 会话生效），无需手动提交。Homebrew 软件也一并覆盖：`sync.sh` 每次运行会先执行 `brew bundle dump` 刷新 `mac/Brewfile`，本机新装/卸载的软件会被自动记录并提交。
 
 也可以随时手动运行 `./sync.sh` 或走传统流程：
 

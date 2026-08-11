@@ -8,6 +8,11 @@ set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DOTFILES_DIR"
 
+# Snapshot Homebrew packages so new installs get committed too
+if command -v brew >/dev/null 2>&1; then
+  brew bundle dump --force --file="$DOTFILES_DIR/mac/Brewfile" >/dev/null 2>&1 || true
+fi
+
 # Nothing to do if the working tree is clean
 if [ -z "$(git status --porcelain)" ]; then
   exit 0

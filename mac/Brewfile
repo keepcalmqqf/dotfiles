@@ -1,0 +1,51 @@
+# GNU compiler collection for arm-none-eabi
+brew "arm-none-eabi-gcc"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Fast and simple Node.js version manager
+brew "fnm"
+# Manage Flutter SDK versions per project
+brew "fvm"
+# GitHub command-line tool
+brew "gh"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Dex to Java decompiler
+brew "jadx"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Java-based project management
+brew "maven"
+# Deep clean and optimize your Mac
+brew "mole"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# CLI proxy to minimize LLM token consumption
+brew "rtk"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Terminal multiplexer
+brew "tmux"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Command-line interface for 1Password
+cask "1password-cli"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+uv "markitdown[all]"
+npm "@jackwener/opencli"
+npm "@openai/codex"
