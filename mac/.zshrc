@@ -27,6 +27,21 @@ export PATH="$HOME/.kimi-code/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/fvm/default/bin:$PATH"
 
+# Dotfiles auto-sync: commit & push config changes at most once every 10 min.
+# (launchd can't touch ~/Desktop due to macOS privacy, so sync on shell prompt instead)
+_dotfiles_repo="${${${(%):-%x}:A}:h:h}"
+_dotfiles_auto_sync() {
+  local stamp="$_dotfiles_repo/.last_sync" now=$EPOCHSECONDS
+  local last=$(<"$stamp" 2>/dev/null) || last=0
+  if (( now - ${last:-0} > 600 )); then
+    echo $now >| "$stamp"
+    ("$_dotfiles_repo/sync.sh" &>/dev/null &)
+  fi
+}
+zmodload zsh/datetime
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _dotfiles_auto_sync
+
 # Syntax highlighting (must be sourced LAST in .zshrc)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
