@@ -42,6 +42,10 @@ zmodload zsh/datetime
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _dotfiles_auto_sync
 
+# SDKMAN (Java/Scala/Kotlin version manager) — keep near the end
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 # Syntax highlighting (must be sourced LAST in .zshrc)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
