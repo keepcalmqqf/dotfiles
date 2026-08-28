@@ -26,8 +26,10 @@ echo "==> Installing packages from Brewfile..."
 brew bundle install --file="$DOTFILES_DIR/mac/Brewfile" || echo "  [warn] 部分包安装失败，可稍后重跑 brew bundle"
 
 # Font is not tracked in the Brewfile (installed manually on this machine);
-# install it separately, non-fatal
-if brew list --cask font-fira-code-nerd-font >/dev/null 2>&1; then
+# install it separately, non-fatal. Check the Fonts dir itself: the cask fails
+# with "already a Font" if the .ttf exists without brew tracking it.
+if brew list --cask font-fira-code-nerd-font >/dev/null 2>&1 \
+  || compgen -G "$HOME/Library/Fonts/FiraCodeNerdFont*.ttf" >/dev/null; then
   echo "  [ok] font-fira-code-nerd-font"
 else
   echo "  [install] font-fira-code-nerd-font"
