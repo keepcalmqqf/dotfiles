@@ -29,12 +29,14 @@ export PATH="$HOME/fvm/default/bin:$PATH"
 
 # Dotfiles auto-sync: commit & push config changes at most once every 10 min.
 # (launchd can't touch ~/Desktop due to macOS privacy, so sync on shell prompt instead)
+# Stamp lives in $TMPDIR: files on ~/Desktop carry com.apple.provenance and can
+# refuse writes (EPERM) from any app other than the one that last wrote them.
 _dotfiles_repo="${${${(%):-%x}:A}:h:h}"
 _dotfiles_auto_sync() {
-  local stamp="$_dotfiles_repo/.last_sync" now=$EPOCHSECONDS
+  local stamp="${TMPDIR:-/tmp}/dotfiles_last_sync" now=$EPOCHSECONDS
   local last=$(cat "$stamp" 2>/dev/null) || last=0
   if (( now - ${last:-0} > 600 )); then
-    echo $now >| "$stamp"
+    echo $now >| "$stamp" 2>/dev/null || return
     ("$_dotfiles_repo/sync.sh" &>/dev/null &)
   fi
 }
