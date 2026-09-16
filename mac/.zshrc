@@ -51,14 +51,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Syntax highlighting (must be sourced LAST in .zshrc)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# >>> Hermes Studio CLI shim >>>
-case ":$PATH:" in
-  *":$HOME/bin:"*) ;;
-  *) export PATH="$HOME/bin:$PATH" ;;
-esac
-# <<< Hermes Studio CLI shim <<<
-
-
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
