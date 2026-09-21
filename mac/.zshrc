@@ -59,3 +59,8 @@ autoload -Uz compinit && compinit -C
 
 # bun completions
 [ -s "/Users/mac/.bun/_bun" ] && source "/Users/mac/.bun/_bun"
+
+# QODER_DISPATCHER_PATH v1
+path=("$HOME/.qoder/entry" ${path:#"$HOME/.qoder/entry"})
+export PATH
+# END QODER_DISPATCHER_PATH v1
