@@ -18,10 +18,14 @@ brew "fvm"
 brew "gh"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Kubernetes package manager
+brew "helm"
 # Dex to Java decompiler
 brew "jadx"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Little helper to run CNCF's k3s in Docker
+brew "k3d"
 # Java-based project management
 brew "maven"
 # Deep clean and optimize your Mac
