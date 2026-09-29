@@ -15,3 +15,6 @@ HISTCONTROL=ignoredups:erasedups
 
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
+# Vite+ bin (https://viteplus.dev)
+. "/Users/mac/.vite-plus/env"

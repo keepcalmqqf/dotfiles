@@ -5,3 +5,6 @@
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH=$PATH:$HOME/.maestro/bin
+
+# Vite+ bin (https://viteplus.dev)
+. "/Users/mac/.vite-plus/env"

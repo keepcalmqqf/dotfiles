@@ -64,3 +64,6 @@ autoload -Uz compinit && compinit -C
 path=("$HOME/.qoder/entry" ${path:#"$HOME/.qoder/entry"})
 export PATH
 # END QODER_DISPATCHER_PATH v1
+
+# Vite+ bin (https://viteplus.dev)
+. "/Users/mac/.vite-plus/env"
