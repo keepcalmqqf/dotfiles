@@ -53,6 +53,4 @@ cask "gcloud-cli"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 uv "markitdown[all]"
-npm "@larksuite/cli"
-npm "cf"
 npm "corepack"
