@@ -10,3 +10,6 @@ export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 path=("$HOME/.qoder/entry" ${path:#"$HOME/.qoder/entry"})
 export PATH
 # END QODER_DISPATCHER_PATH v1
+
+# Hermes Agent command
+case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
