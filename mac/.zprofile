@@ -10,3 +10,7 @@ export PATH
 # END QODER_DISPATCHER_PATH v1
 
 case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
+
+# >>> Codex installer >>>
+export PATH="/Users/mac/.local/bin:$PATH"
+# <<< Codex installer <<<

@@ -10,8 +10,6 @@ brew "cloudflared"
 brew "cocoapods"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
-# Fast and simple Node.js version manager
-brew "fnm"
 # Manage Flutter SDK versions per project
 brew "fvm"
 # GitHub command-line tool
@@ -53,4 +51,5 @@ cask "gcloud-cli"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 uv "markitdown[all]"
+npm "@openai/codex"
 npm "corepack"
