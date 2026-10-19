@@ -2,11 +2,6 @@
 # Starship prompt
 eval "$(starship init bash)"
 
-# fnm: Node.js version manager
-# Disabled: VITE+ (vp) is now the sole Node version manager to avoid PATH conflicts.
-# To re-enable fnm, uncomment the next line:
-# eval "$(fnm env --use-on-cd)"
-
 # 输入几个字符后按 ↑/↓，按前缀搜索历史
 bind '"\e[A": history-search-backward' 2>/dev/null
 bind '"\e[B": history-search-forward' 2>/dev/null

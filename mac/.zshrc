@@ -15,11 +15,6 @@ eval "$(starship init zsh)"
 # Fish-like autosuggestions (accept with → or End)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# fnm: Node.js version manager (auto-switch version on cd)
-# Disabled: VITE+ (vp) is now the sole Node version manager to avoid PATH conflicts.
-# To re-enable fnm, uncomment the next line:
-# eval "$(fnm env --use-on-cd)"
-
 # Common aliases
 alias ll='ls -lah'
 alias la='ls -A'
