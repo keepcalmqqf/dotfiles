@@ -48,19 +48,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Syntax highlighting (must be sourced LAST in .zshrc)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# >>> grok installer >>>
-export PATH="$HOME/.grok/bin:$PATH"
-fpath=(~/.grok/completions/zsh $fpath)
-autoload -Uz compinit && compinit -C
-# <<< grok installer <<<
-
 # bun completions
 [ -s "/Users/mac/.bun/_bun" ] && source "/Users/mac/.bun/_bun"
-
-# QODER_DISPATCHER_PATH v1
-path=("$HOME/.qoder/entry" ${path:#"$HOME/.qoder/entry"})
-export PATH
-# END QODER_DISPATCHER_PATH v1
 
 # Vite+ bin (https://viteplus.dev)
 . "/Users/mac/.vite-plus/env"
