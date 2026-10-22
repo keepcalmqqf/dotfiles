@@ -57,3 +57,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Android SDK
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+
+# Vite+ bin (https://viteplus.dev)
+. "/Users/qiuqfang/.vite-plus/env"

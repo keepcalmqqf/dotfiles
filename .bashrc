@@ -15,3 +15,6 @@ alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 
 # Vite+ bin (https://viteplus.dev)
 . "/Users/mac/.vite-plus/env"
+
+# Vite+ bin (https://viteplus.dev)
+. "/Users/qiuqfang/.vite-plus/env"

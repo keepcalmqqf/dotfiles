@@ -8,3 +8,6 @@ export PATH=$PATH:$HOME/.maestro/bin
 
 # Vite+ bin (https://viteplus.dev)
 . "/Users/mac/.vite-plus/env"
+
+# Vite+ bin (https://viteplus.dev)
+. "/Users/qiuqfang/.vite-plus/env"
