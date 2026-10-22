@@ -49,14 +49,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # bun completions
-[ -s "/Users/mac/.bun/_bun" ] && source "/Users/mac/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Vite+ bin (https://viteplus.dev)
-. "/Users/mac/.vite-plus/env"
+. "$HOME/.vite-plus/env"
 
 # Android SDK
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
-
-# Vite+ bin (https://viteplus.dev)
-. "/Users/qiuqfang/.vite-plus/env"
