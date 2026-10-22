@@ -1,7 +1,10 @@
-# GNU compiler collection for arm-none-eabi
-brew "arm-none-eabi-gcc"
-# Bourne-Again SHell, a UNIX command interpreter
-brew "bash"
+tap "antoniorodr/memo"
+tap "farion1231/ccswitch"
+tap "openclaw/tap", trusted: { casks: ["goplaces"] }
+tap "openhue/cli"
+tap "steipete/tap"
+tap "xdevplatform/tap"
+tap "yakitrak/yakitrak"
 # Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 brew "bun"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
@@ -16,24 +19,26 @@ brew "fvm"
 brew "gh"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Kubernetes package manager
-brew "helm"
-# Dex to Java decompiler
-brew "jadx"
+# CLI email client written in Rust
+brew "himalaya"
+# Tool to capture still images from an iSight or other video source
+brew "imagesnap"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Little helper to run CNCF's k3s in Docker
-brew "k3d"
 # Java-based project management
 brew "maven"
 # Deep clean and optimize your Mac
 brew "mole"
+# General-purpose speech recognition model
+brew "openai-whisper"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
 brew "rtk"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Multi-modal AI tool to extract and summarize content
+brew "summarize"
 # Terminal multiplexer
 brew "tmux"
 # Extremely fast Python package installer and resolver, written in Rust
@@ -42,14 +47,29 @@ brew "uv"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Fast X CLI for tweeting, replying, and reading
+brew "steipete/tap/bird"
 # Command-line interface for 1Password
 cask "1password-cli"
-# App to build and share containerised applications and microservices
-cask "docker-desktop"
-# Set of tools to manage resources and applications hosted on Google Cloud
-cask "gcloud-cli"
+cask "cc-switch"
+cask "goplaces"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-uv "markitdown[all]"
+cask "xurl"
+uv "nano-pdf"
+npm "@antfu/ni"
+npm "@larksuite/cli"
+npm "@nestjs/cli"
+npm "@openai/codex"
+npm "@shopify/cli"
+npm "@shopify/theme"
+npm "clawdbot"
+npm "cline"
 npm "corepack"
 npm "eas-cli"
+npm "moltbot"
+npm "pnpm"
+npm "sharp"
+npm "whistle"
+npm "wrangler"
+npm "yarn"
