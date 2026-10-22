@@ -1,4 +1,4 @@
-﻿# Dotfiles bootstrap for Windows: install dependencies and symlink configs.
+# Dotfiles bootstrap for Windows: install dependencies and symlink configs.
 # Usage: powershell -ExecutionPolicy Bypass -File .\install.ps1
 $ErrorActionPreference = 'Stop'
 
@@ -14,7 +14,7 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
 }
 
 # CLI tools (git 放最前，scoop 添加 bucket 等操作依赖它)
-$Packages = @('git', 'starship', 'fnm', 'bun', 'uv')
+$Packages = @('git', 'starship', 'bun', 'uv')
 foreach ($pkg in $Packages) {
   if (Get-Command $pkg -ErrorAction SilentlyContinue) {
     Write-Host "  [ok] $pkg"

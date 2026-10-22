@@ -6,12 +6,12 @@
 
 | 文件 | 平台 | 作用 |
 | --- | --- | --- |
-| `mac/.zshrc` | macOS | zsh 主配置：OMZ 插件（git/z/macos/colored-man-pages/extract）、starship、fnm、自动补全建议、语法高亮、别名 |
+| `mac/.zshrc` | macOS | zsh 主配置：OMZ 插件（git/z/macos/colored-man-pages/extract）、starship、自动补全建议、语法高亮、别名 |
 | `mac/.zprofile` | macOS | Homebrew 环境、JetBrains Toolbox 集成 |
-| `.bashrc` / `.bash_profile` | 通用 | bash 配置，同样接入 starship、fnm（Windows 下给 Git Bash 用），含历史前缀搜索（↑/↓）与历史去重 |
+| `.bashrc` / `.bash_profile` | 通用 | bash 配置，同样接入 starship（Windows 下给 Git Bash 用），含历史前缀搜索（↑/↓）与历史去重 |
 | `mac/.tmux.conf` | macOS | tmux：真彩色、鼠标、Catppuccin Mocha 状态栏（按下前缀键时高亮）、`\|`/`-` 分屏、hjkl 切换/调整窗格、vi 复制模式直出 pbcopy、Shift+←/→ 切窗口 |
 | `.config/starship.toml` | 通用 | starship 提示符：双行布局、Nerd Font 图标、git 状态配色 |
-| `windows/Microsoft.PowerShell_profile.ps1` | Windows | PowerShell 5.1 配置：starship、fnm、PSReadLine 历史前缀搜索/补全、移除与 fnm 冲突的 `ni` 别名 |
+| `windows/Microsoft.PowerShell_profile.ps1` | Windows | PowerShell 5.1 配置：starship、PSReadLine 历史前缀搜索/补全、移除与 `ni` 冲突的内置别名 |
 | `windows/.minttyrc` | Windows | Git Bash 终端（mintty）：FiraCode Nerd Font、134x42 窗口 |
 | `install.sh` | macOS | 新电脑一键恢复脚本 |
 | `install.ps1` | Windows | 新电脑一键恢复脚本 |
@@ -40,7 +40,7 @@ cd D:\coding\dotfiles
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-脚本会自动：安装 git / starship / fnm / bun / uv 与 FiraCode Nerd Font Mono（经 Scoop）、把共享配置（`.bashrc` / `.bash_profile` / `starship.toml`）和 `windows/` 下的配置链接到 `$HOME` 与 PowerShell `$PROFILE`（已有文件自动备份为 `*.bak.<时间戳>`）。
+脚本会自动：安装 git / starship / bun / uv 与 FiraCode Nerd Font Mono（经 Scoop）、把共享配置（`.bashrc` / `.bash_profile` / `starship.toml`）和 `windows/` 下的配置链接到 `$HOME` 与 PowerShell `$PROFILE`（已有文件自动备份为 `*.bak.<时间戳>`）。
 
 注意：
 
