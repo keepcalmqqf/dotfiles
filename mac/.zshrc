@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 
 # Fish-like autosuggestions (accept with → or End)
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Common aliases
 alias ll='ls -lah'
@@ -46,7 +46,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Syntax highlighting (must be sourced LAST in .zshrc)
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
