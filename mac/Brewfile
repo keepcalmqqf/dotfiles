@@ -28,6 +28,8 @@ brew "k3d"
 brew "maven"
 # Deep clean and optimize your Mac
 brew "mole"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.15"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
