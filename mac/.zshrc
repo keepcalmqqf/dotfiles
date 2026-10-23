@@ -57,3 +57,12 @@ source "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-syntax-highlighting/zsh-synt
 # Android SDK
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+# ===== Armino SMP SDK (TimeWeather / BK7258) =====
+export ARMINO_HOME="$HOME/armino"
+export SDK_DIR="$ARMINO_HOME/bk_avdk_smp"
+export ARMINO_TOOLS_PATH="$SDK_DIR/tools"
+export ARMINO_PATH="$SDK_DIR"
+# 本地交叉工具链（Homebrew arm-none-eabi-gcc 16.2.0；官方为 gcc-arm-none-eabi-10.3-2021.10）
+export COMPILER_TOOLCHAIN_PATH="/opt/homebrew/bin"
+export TOOLCHAIN_DIR="$COMPILER_TOOLCHAIN_PATH"
+export PATH="$ARMINO_HOME/bin:$PATH"
