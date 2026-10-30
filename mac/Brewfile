@@ -52,6 +52,8 @@ cask "docker-desktop"
 cask "gcloud-cli"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# Replacement for Docker Desktop
+cask "orbstack"
 uv "markitdown[all]"
 npm "corepack"
 npm "eas-cli"
