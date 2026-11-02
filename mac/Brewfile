@@ -8,6 +8,8 @@ brew "bun"
 brew "cloudflared"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
+# Easiest way to build and release mobile apps
+brew "fastlane"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Manage Flutter SDK versions per project
