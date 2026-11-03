@@ -62,7 +62,8 @@ export ARMINO_HOME="$HOME/armino"
 export SDK_DIR="$ARMINO_HOME/bk_avdk_smp"
 export ARMINO_TOOLS_PATH="$SDK_DIR/tools"
 export ARMINO_PATH="$SDK_DIR"
-# 本地交叉工具链（Homebrew arm-none-eabi-gcc 16.2.0；官方为 gcc-arm-none-eabi-10.3-2021.10）
-export COMPILER_TOOLCHAIN_PATH="/opt/homebrew/bin"
+# 本地交叉工具链：官方 gcc-arm-none-eabi-10.3-2021.10（macOS 版，自带 newlib）
+# 注意：不能用 Homebrew 的 arm-none-eabi-gcc，它不带 libc.a/libm.a/libnosys.a，SDK 链接必失败
+export COMPILER_TOOLCHAIN_PATH="$ARMINO_HOME/toolchain/gcc-arm-none-eabi-10.3-2021.10/bin"
 export TOOLCHAIN_DIR="$COMPILER_TOOLCHAIN_PATH"
 export PATH="$ARMINO_HOME/bin:$PATH"
