@@ -67,3 +67,9 @@ export ARMINO_PATH="$SDK_DIR"
 export COMPILER_TOOLCHAIN_PATH="$ARMINO_HOME/toolchain/gcc-arm-none-eabi-10.3-2021.10/bin"
 export TOOLCHAIN_DIR="$COMPILER_TOOLCHAIN_PATH"
 export PATH="$ARMINO_HOME/bin:$PATH"
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
