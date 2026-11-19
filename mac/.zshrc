@@ -73,3 +73,10 @@ export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
 autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/mac/.dart-cli-completion/zsh-config.zsh ]] && . /Users/mac/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+export PATH="/Users/mac/.shorebird/bin:$PATH"
