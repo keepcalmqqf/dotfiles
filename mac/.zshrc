@@ -81,3 +81,4 @@ autoload -Uz compinit && compinit -C
 
 export PATH="/Users/mac/.shorebird/bin:$PATH"
 alias lceda-pro="/Applications/嘉立创EDA\(专业版\).app/Contents/MacOS/LCEDA-Pro"
+alias lceda-pro="/Applications/嘉立创EDA\(专业版\).app/Contents/MacOS/LCEDA-Pro"

@@ -13,3 +13,4 @@ export PATH=$PATH:$HOME/.maestro/bin
 . "$HOME/.vite-plus/env"
 . "$HOME/.cargo/env"
 alias lceda-pro="/Applications/嘉立创EDA\(专业版\).app/Contents/MacOS/LCEDA-Pro"
+alias lceda-pro="/Applications/嘉立创EDA\(专业版\).app/Contents/MacOS/LCEDA-Pro"
