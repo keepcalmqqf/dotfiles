@@ -21,3 +21,7 @@ alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 . "$HOME/.cargo/env"
 alias lceda-pro="/Applications/嘉立创EDA\(专业版\).app/Contents/MacOS/LCEDA-Pro"
 alias lceda-pro="/Applications/嘉立创EDA\(专业版\).app/Contents/MacOS/LCEDA-Pro"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/mac/.local/bin:$PATH"
