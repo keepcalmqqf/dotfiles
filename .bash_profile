@@ -18,3 +18,10 @@ alias lceda-pro="/Applications/嘉立创EDA\(专业版\).app/Contents/MacOS/LCED
 
 # Added by Antigravity CLI installer
 export PATH="/Users/mac/.local/bin:$PATH"
+
+# >>> magpie agy >>>
+unalias agy 2>/dev/null || true
+agy() {
+  if [ -x '/Applications/magpie.app/Contents/MacOS/magpie' ]; then '/Applications/magpie.app/Contents/MacOS/magpie' agy run "$@"; else command agy "$@"; fi
+}
+# <<< magpie agy <<<
